@@ -1,0 +1,40 @@
+{
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "clear": "Clear",
+    "undo": "Undo",
+    "redo": "Redo",
+    "input": "Input",
+    "output": "Output",
+    "options": "Options",
+    "history": "History",
+    "loadFile": "Load File",
+    "saveFile": "Save File",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "close": "Close",
+    "download": "Download"
+  },
+  "warnings": {
+    "largeInput": "Large input detected ({{size}}). Processing may be slow.",
+    "inputSizeLimit": "Input exceeds recommended size limit."
+  },
+  "history": {
+    "noHistory": "No history available",
+    "clearHistory": "Clear History",
+    "confirmClear": "Are you sure you want to clear all history?"
+  },
+  "demo": {
+    "title": "Demo Tool",
+    "description": "A demonstration tool showcasing the framework features",
+    "inputPlaceholder": "Enter text here...",
+    "outputPlaceholder": "Output will appear here...",
+    "reverseText": "Reverse Text",
+    "uppercase": "Uppercase",
+    "lowercase": "Lowercase",
+    "processing": "Processing..."
+  }
+}

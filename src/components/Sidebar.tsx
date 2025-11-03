@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ReactNode } from 'react';
+import { toolRegistry } from '../registry/ToolRegistry';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -35,6 +36,7 @@ const navItems: NavItem[] = [
 
 export default function Sidebar({ isOpen }: SidebarProps) {
   const location = useLocation();
+  const tools = toolRegistry.getAll();
 
   if (!isOpen) return null;
 
@@ -61,11 +63,50 @@ export default function Sidebar({ isOpen }: SidebarProps) {
             );
           })}
         </ul>
-        <div className="mt-6 border-t border-[var(--color-border)] pt-4">
-          <p className="px-4 text-sm text-gray-500">
-            Tool placeholders will appear here
-          </p>
-        </div>
+        {tools.length > 0 && (
+          <div className="mt-6 border-t border-[var(--color-border)] pt-4">
+            <p className="mb-2 px-4 text-xs font-semibold text-gray-500 uppercase">
+              Tools
+            </p>
+            <ul className="space-y-2">
+              {tools.map((tool) => {
+                const isActive = location.pathname === tool.path;
+                return (
+                  <li key={tool.id}>
+                    <Link
+                      to={tool.path}
+                      className={`flex items-center gap-3 rounded-lg px-4 py-2 transition-colors ${
+                        isActive
+                          ? 'bg-[var(--color-primary)] text-white'
+                          : 'text-[var(--color-foreground)] hover:bg-[var(--color-hover)]'
+                      }`}
+                      title={tool.description}
+                    >
+                      {tool.icon ? (
+                        <span>{tool.icon}</span>
+                      ) : (
+                        <svg
+                          className="h-5 w-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                          />
+                        </svg>
+                      )}
+                      <span className="font-medium">{tool.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </nav>
     </aside>
   );

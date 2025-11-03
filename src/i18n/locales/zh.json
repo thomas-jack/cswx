@@ -1,0 +1,40 @@
+{
+  "common": {
+    "copy": "复制",
+    "paste": "粘贴",
+    "clear": "清除",
+    "undo": "撤销",
+    "redo": "重做",
+    "input": "输入",
+    "output": "输出",
+    "options": "选项",
+    "history": "历史",
+    "loadFile": "加载文件",
+    "saveFile": "保存文件",
+    "language": "语言",
+    "theme": "主题",
+    "light": "浅色",
+    "dark": "深色",
+    "close": "关闭",
+    "download": "下载"
+  },
+  "warnings": {
+    "largeInput": "检测到大输入 ({{size}})。处理可能会很慢。",
+    "inputSizeLimit": "输入超过推荐大小限制。"
+  },
+  "history": {
+    "noHistory": "没有历史记录",
+    "clearHistory": "清除历史",
+    "confirmClear": "您确定要清除所有历史记录吗？"
+  },
+  "demo": {
+    "title": "演示工具",
+    "description": "展示框架功能的演示工具",
+    "inputPlaceholder": "在此输入文本...",
+    "outputPlaceholder": "输出将在此显示...",
+    "reverseText": "反转文本",
+    "uppercase": "大写",
+    "lowercase": "小写",
+    "processing": "处理中..."
+  }
+}
