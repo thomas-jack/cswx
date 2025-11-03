@@ -1,4 +1,5 @@
 import ThemeToggle from './ThemeToggle';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -32,7 +33,10 @@ export default function Header({ onMenuClick, isSidebarOpen }: HeaderProps) {
           CSWX
         </h1>
       </div>
-      <ThemeToggle />
+      <div className="flex items-center gap-4">
+        <LanguageSwitcher />
+        <ThemeToggle />
+      </div>
     </header>
   );
 }
